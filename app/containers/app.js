@@ -1,7 +1,7 @@
 import React from 'react'
-import Search from './search'
-import Player from './player'
-import Playlist from './playlist'
+import Search from '../components/search'
+import Player from '../components/player'
+import Playlist from '../components/playlist'
 
 const App = () => (
   <div>

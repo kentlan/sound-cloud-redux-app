@@ -4,5 +4,4 @@ const initialState = {
 
 const playlist = (state = initialState) => state
 
-
 export default playlist

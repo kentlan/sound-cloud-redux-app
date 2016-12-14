@@ -4,5 +4,4 @@ const initialState = {
 
 const player = (state = initialState) => state
 
-
 export default player
