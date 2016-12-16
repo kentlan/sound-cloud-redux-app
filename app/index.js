@@ -4,6 +4,8 @@ import App from './containers/app'
 import {Provider} from 'react-redux'
 import store from './store'
 
+window.store = store
+
 const root = (
   <Provider store={store}>
     <App/>

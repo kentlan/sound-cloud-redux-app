@@ -1,10 +1,9 @@
-const initialState = {
-}
+const initialState = []
 
 const search = (state = initialState, action) => {
   switch (action.type) {
     case 'REFRESH_SEARCH_RESULTS':
-      return {...state, showResults: true}
+      return action.results
     default:
       return state
   }
