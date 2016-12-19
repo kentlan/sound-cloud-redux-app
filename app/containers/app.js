@@ -1,13 +1,13 @@
 import React from 'react'
-import Search from '../components/search'
+import SearchContainer from './search'
 import Player from '../components/player'
 import Playlist from '../components/playlist'
 
 const App = () => (
   <div>
-    <Search></Search>
-    <Player></Player>
-    <Playlist></Playlist>
+    <SearchContainer/>
+    <Player/>
+    <Playlist/>
   </div>
 )
 

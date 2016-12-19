@@ -24,13 +24,29 @@ const config = {
       include: `${__dirname}/app`,
       query: {
         presets: ['react', 'es2015', 'stage-0'],
+        plugins: [
+          ['transform-runtime', {
+            'helpers': false,
+            'polyfill': false,
+            'regenerator': true,
+            'moduleName': 'babel-runtime'
+          }]
+        ],
         env: {
           development: {
             presets: ['react-hmre']
           }
         }
       }
-    }]
+    },
+      {
+        test: /\.css$/,
+        loader: 'style!css'
+      },
+      {
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
+      }]
   }
 }
 
