@@ -31,7 +31,7 @@ class Search extends Component {
     })
   }, 800)
 
-  inputHandler = event => {
+  handlerInput = event => {
     this.setState({
       searchQuery: event.target.value
     })
@@ -43,7 +43,7 @@ class Search extends Component {
 
     return (
       <div>
-        <input onChange={this.inputHandler} value={searchQuery}/>
+        <input onChange={this.handlerInput} value={searchQuery}/>
         <SearchResults show={showResults} tracksList={this.props.tracksList}/>
       </div>
     )

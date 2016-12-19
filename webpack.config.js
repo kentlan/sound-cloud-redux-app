@@ -38,7 +38,15 @@ const config = {
           }
         }
       }
-    }]
+    },
+      {
+        test: /\.css$/,
+        loader: 'style!css'
+      },
+      {
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
+      }]
   }
 }
 
