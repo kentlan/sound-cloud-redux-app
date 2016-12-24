@@ -4,14 +4,11 @@ import {connect} from 'react-redux'
 import Search from '../components/search'
 import * as searchActions from '../actions/search-actions'
 
-const SearchContainer = (props) => (
-  <div>
-    <Search {...props}></Search>
-  </div>
-)
+const SearchContainer = (props) => <Search {...props}></Search>
 
 const mapStateToProps = state => ({
-  tracksList: state.search
+  tracksList: state.search,
+  addedTracks: state.playlist
 })
 
 const mapDispatchToProps = (dispatch) => ({
@@ -20,7 +17,8 @@ const mapDispatchToProps = (dispatch) => ({
 
 SearchContainer.propTypes = {
   actions: PropTypes.object,
-  tracksList: PropTypes.array
+  tracksList: PropTypes.array,
+  addedTracks: PropTypes.array
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer)

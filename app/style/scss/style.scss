@@ -1,0 +1,183 @@
+$text-color: #ffffff;
+$background-color: #D7DACE;
+$track-background: #ABBD79;
+$track-background-add: #D7DACE;
+$font-size: 14px;
+
+@keyframes show-up {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  color: $text-color;
+  background: linear-gradient(130deg, #aaf8ea 50%, #fcc3b2 50%);
+  font-size: $font-size;
+  .searchContainer {
+    position: relative;
+    margin: 15px auto;
+    width: 95%;
+    z-index: 2;
+  }
+  .searchInput {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 20px;
+    padding: 16px;
+    color: #b3b3b3;
+    &:focus{
+      outline: none;
+    }
+  }
+
+  .searchResults {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 100%;
+    max-height: 500px;
+    overflow-y: scroll;
+    justify-content: center;
+    box-sizing: border-box;
+
+    .searchItem {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      &:before {
+        content: "";
+        display: block;
+        padding-top: 100%;
+      }
+
+      .track {
+        position:  absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        animation-name: show-up;
+        animation-duration: .5s;
+        background-image: url('../img/no-art.jpg');
+        background-size: cover;
+
+        img {
+          height: 100%;
+          width:100%;
+          transition: opacity .7s;
+        }
+
+        .info {
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: 10px;
+          width: calc(100% - 10px * 2);
+          height: calc(100% - 10px * 2);
+          text-align: center;
+          background-color: rgba(54, 53, 53, 0.76);
+          transition: .3s;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 1;
+            transition: .3s;
+          }
+
+          .add {
+            bottom: 0;
+            position: absolute;
+            right: 0;
+            background-color: rgba(204, 45, 136, 0.68);
+            height: 15px;
+            width: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  .playlistWrapper, .playerWrapper {
+    position: absolute;
+    background-color: #fff;
+    height: 200px;
+    width: 600px;
+    top: 50%;
+    margin-top: -100px;
+    margin-left: -300px;
+    left: 50%;
+    color: #474747;
+
+    h2 {
+      text-align: center;
+    }
+    .buttonContainer {
+      display: flex;
+    }
+    ul.playlist {
+      overflow-y: scroll;
+      padding: 0 15px;
+      height: 70%;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        background-color: #fdeee9;
+        padding: 5px 10px;
+
+        &:nth-child(2n) {
+          background-color: #edf6f5;
+        }
+
+        .btn {
+          padding: 0;
+          border: none;
+          border-radius: 50%;
+          width: 15px;
+          height: 15px;
+          font-size: 12px;
+          color: #aaf8ea;
+          outline: none;
+          margin: 0 5px;
+
+          &.remove {
+            background-color: rgba(255, 0, 0, 0.74);
+          }
+
+          &.play {
+            background-color: #72cd65;
+          }
+
+        }
+      }
+    }
+  }
+
+  .playerWrapper {
+    display: inline-flex;
+
+    .albumCover {
+      display: inline;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    .playerLayout {
+      display: inline-block;
+      vertical-align: top;
+      width: 400px;
+    }
+  }
+}

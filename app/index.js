@@ -4,6 +4,9 @@ import App from './containers/app'
 import {Provider} from 'react-redux'
 import store from './store'
 import './style/scss/style.scss'
+import 'normalize.css'
+
+window.store = store
 
 const root = (
   <Provider store={store}>

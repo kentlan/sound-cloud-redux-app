@@ -44,6 +44,10 @@ const config = {
         loader: 'style!css'
       },
       {
+        test: /\.jpg$|\.png$/,
+        loader: 'file-loader'
+      },
+      {
         test: /\.scss$/,
         loaders: ['style-loader', 'css-loader', 'sass-loader']
       }]

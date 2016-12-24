@@ -1,4 +1,4 @@
-import {STOLEN_CLIENT_ID, BASE_URL, TRACKS_URL} from './constants'
+import {CLIENT_ID, BASE_URL, TRACKS_URL} from './constants'
 
 const paramsArrayToString = params => (
   params
@@ -8,7 +8,7 @@ const paramsArrayToString = params => (
 )
 
 const constructUrl = (subUrl, params) => (
-  `${BASE_URL}${subUrl}?client_id=${STOLEN_CLIENT_ID}${paramsArrayToString(params)}`
+  `${BASE_URL}${subUrl}?client_id=${CLIENT_ID}${paramsArrayToString(params)}`
 )
 
 export const getTracksURL = (searchQuery, limit, offset) => {
